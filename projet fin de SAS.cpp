@@ -17,7 +17,7 @@ int taille_note = 0;
 
 // Fonction pour ajouter un note
 void ajouter_un_note() {
-    if (taille_note < 100) {  // "Vérifiez s'il y a de l'espace dans le tableau."
+    if (taille_note < 100) {  // "VÃ©rifiez s'il y a de l'espace dans le tableau."
         // Description de note
         printf("Entrez la description de la note :\n");
         scanf("%s", liste_note[taille_note].description);
