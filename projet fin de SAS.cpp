@@ -76,6 +76,27 @@ void modifier_note() {
         printf("Numero de note invalide!\n");
     }
 }
+// Fonction pour supprimer une note
+void supprimer_note() {
+    int choix;
+    afficher_liste();
+
+    printf("Entrez le numero de la note a supprimer : ");
+    scanf("%d", &choix);
+
+    if (choix > 0 && choix <= taille_note) {
+        // Décalage des éléments suivants pour remplir l'emplacement supprimé
+        for (int i = choix - 1; i < taille_note - 1; i++) {
+            liste_note[i] = liste_note[i + 1];
+        }
+
+        taille_note--;
+        printf("Note supprimee avec succes!\n");
+    } else {
+        printf("Numero de note invalide!\n");
+    }
+}
+
 
 int main() {
     int choix;
@@ -85,7 +106,8 @@ int main() {
         printf("2. Afficher une note\n");
         printf("3. Afficher la liste des notes\n");
         printf("4. Modifier une note\n");
-        printf("5. Quitter\n");
+        printf("5.supprimer un note :\n");
+        printf("6. Quitter\n");
         printf("Entrez votre choix : ");
         scanf("%d", &choix);
 
@@ -103,6 +125,9 @@ int main() {
                 modifier_note();
                 break;
             case 5:
+                supprimer_note();
+                break;
+            case 6:
                 printf("Au revoir!\n");
                 break;
             default:
